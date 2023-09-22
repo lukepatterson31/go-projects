@@ -34,7 +34,7 @@ Requires the execution of `go mod init` in the project dir as of version 1.16
 
 `go fmt main.go`
 
-Formats your source code, most IDEs do this on save
+Formats your source code- most IDEs do this on save
 
 **The golint and go vet commands:**
 
@@ -54,3 +54,64 @@ Execution environment - https://play.golang.org/
 - `goimports` to fix imports
 
 ### Understanding Go Syntax
+
+**Data Types:**
+
+Primitive:
+
+- bool
+- string
+- int
+- int8
+- int16
+- int32
+- int64
+- uint
+- uint8
+- uint16
+- uint32
+- uint64
+- uintptr
+- byte
+- rune
+- float32
+- float64
+- complex64
+- complex128
+
+**Declare variables:**
+
+```
+var x = "Hello, World!"
+z := int(42)
+```
+
+**Slices and Maps:**
+
+Slices are like arrays that you can dynamically resize and pass to functions more efficiently.
+
+Maps are associative arrays, unordered lists of key/value pairs that allow you to efficiently 
+and quickly look up values for a unique key.
+
+slice and map declaration:
+
+```
+var slice = make([], string, 0)
+var map = make(map[string]string)
+
+slice = append(slice, "a string")
+map["a key"] = "a value"
+```
+
+**Pointers, Structs, and Interfaces:**
+
+Go uses the same syntax as C for pointers, &varname retrieves the address in memory of the 
+variable, and the * operator to dereference the address
+
+```
+var count = int(42)
+var ptr int* = &count
+fmt.Println(*ptr)
+*ptr = 100
+fmt.Println(count)
+```
