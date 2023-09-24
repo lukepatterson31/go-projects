@@ -115,3 +115,81 @@ fmt.Println(*ptr)
 *ptr = 100
 fmt.Println(count)
 ```
+
+New data types are declared using struct
+
+```
+type Person struct{
+    Name string
+}
+```
+
+Interfaces define a set of actions that must be implemented for any concrete implementation to 
+be considered a type of that interface
+
+type Friend interface {
+    SayHello()
+}
+
+**Control Structures**
+
+if/else statements
+
+```
+if x == 1 {
+    fmt.Println("X is equal to 1")
+} else {
+    fmt.Println("X is not equal to 1")
+}
+```
+
+switch statements
+
+switch x {
+    case "foo":
+        fmt.Println("Found foo")
+    case "baz":
+        fmt.Println("Found baz")
+    default:
+        fmt.Println("Default case")
+}
+
+Cases don't require the use of break statements
+
+type switch
+
+```
+func foo(i interface{}) {
+    switch v := i.(type)v {
+    case int:
+        fmt.Println("I'm an integer!", v)
+    case string:
+        fmt.Println("I'm a string!", v)
+    default:
+        fmt.Println("Unknown type!", v)
+    }
+}
+```
+
+Uses special syntax to compare the type of the interface passed in
+
+for loops
+
+```
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+}
+```
+
+using range with collections (slices, maps):
+
+```
+nums = []int{1,2,3,4,5}
+for idx, val := range nums {
+    fmt.Println(idx, val)
+}
+```
+
+**Concurrency**
+
+
